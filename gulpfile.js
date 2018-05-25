@@ -26,8 +26,17 @@ gulp.task('copy-index',function(){
  gulp.task('copy-css',function(){ 
 	return gulp.src('css/*.css').pipe(gulp.dest('dist/css'));
  });
+ gulp.task('copy-js',function(){ 
+	return gulp.src('js/*.js').pipe(gulp.dest('dist/js'));
+ });
+ gulp.task('images',function(){ 
+	return gulp.src('imgeas/*.{jpg,png}').pipe(gulp.dest('dist/imgeas'))
+ }) 
+
 gulp.task('watch',function(){
 	 gulp.watch('html/*.html',['copy-index']); 
+	 gulp.watch('images/*.{jpg,png}',['images']); 
 	 gulp.watch('css/*.css',['copy-css']); 
+	 gulp.watch('js/*.js',['copy-js']); 
 	gulp.watch('sass/*.scss',['sass']);
    }) 

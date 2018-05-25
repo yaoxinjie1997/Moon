@@ -1,5 +1,9 @@
-header,.banner,.xryl,.zx,.jhtj,.rjzt,.gdzt,.zxhc,.fxhh,.gdhh,footer{
+header,.banner,.xryl,.zx,.jhtj,.rjzt,.gdzt,.zxhc,.fxhh,.gdhh,footer,nav{
     min-width: 1200px;
+}
+body,html,ul,li,h3,h5{
+    padding: 0;
+    margin: 0;
 }
 a{
     text-decoration: none;
@@ -7,18 +11,25 @@ a{
 li{
     list-style: none;
 }
+
 .down{
     opacity: .8;
 }
 @mixin wrap{
         width: 1200px;
         height: 100%;
-        margin: auto;
+        margin:0 auto;
+}
+@mixin wrap-h3{
+    h3{
+        text-align: center;
+        padding-bottom: 20px;
+    }
 }
 //-----------------------------------------------头部--------------------------------
 header{
     min-width: 1200px;
-    height: 136px;
+    height: 92px;
     background: #333333;
     .header_wrap{
         @include wrap;
@@ -186,45 +197,166 @@ header{
     
     
 }
+//-----------------------------------------------nav--------------------------------
+nav{
+    background: #F7F7F7;
+    ul{
+        @include wrap;
+        text-align: center;
+        li{
+            display: inline-block;
+            height: 41px;
+            overflow: hidden;
+            line-height: 42px;
+            font-size: 14px;
+            color: #000;
+            cursor: default;
+            width: 60px;
+            text-align: center;
+        }
+    }
+}
 //-----------------------------------------------轮播图--------------------------------
 .banner{
     height: 632px;
     background: deepskyblue;
+    overflow: hidden;
+    padding-top: 24px;
+    ul{
+        @include wrap;
+        height: 100%;
+        li{
+            float: left;
+        }
+    }
+    
 }
 //-----------------------------------------------新人有礼那一条--------------------------------
 .xryl{
     height: 124px;
-    background: greenyellow;
+    ul{
+        padding-top: 20px;
+        @include wrap;
+        li{
+            float: left;
+            a{
+                margin-right: 50px;
+                display: block;
+                width: 250px;
+                height: 86px;
+                background-image: url(../imgeas/shortcut3a.jpg);
+                background-repeat: no-repeat;
+            }
+        }
+        li:nth-child(2) a{         
+                background-position: -250px 0;
+        }
+        li:nth-child(3) a{         
+                background-position: -745px 0;
+        }
+        li:nth-child(4) a{         
+                background-position: -985px 0;
+        }
+    }
 }
 //-----------------------------------------------最新两个--------------------------------
 .zx{
     height: 380px;
-    background: pink;
+   @include wrap-h3;
+   ul{
+       @include wrap;
+       li{
+           float: left;
+           position: relative;
+           p{
+               width: 100%;
+               text-align: center;
+               position: absolute;
+               top: 50%;
+           }
+       }
+   }
+   
 }
 //-----------------------------------------------尖货推荐--------------------------------
 .jhtj{
     height: 1934px;
-    background: gold;
+    @include wrap-h3;
+    .jhtj-ul{
+        @include wrap;
+        ul{ 
+        overflow: hidden;
+         margin: 0 0 40px;
+        li{
+            float: left;
+            width: 394px;
+            display: inline;
+             margin: 0 4px 4px 0;
+            a{
+                width: 100%;
+                height: 100%;
+                display: block;
+                img{
+                    width: 394px;
+                }
+            }
+        }
+    }
+    }
+    
 }
 //-----------------------------------------------热键专题--------------------------------
 .rjzt{
     height: 1062px;
-    background: orchid;
+    @include wrap-h3;
+    ul{
+        @include wrap;
+        li{
+            position: relative;
+            float: left;
+                width: 600px;
+                margin: 0 0 40px;
+            p{
+                width:100%;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+            }
+        }
+    }
 }
 //-----------------------------------------------更多专题 一小条--------------------------------
 .gdzt{
     height: 116px;
-    background: #cecece;
+    @include wrap-h3;
+    padding-top: 40px;
 }
 //-----------------------------------------------走秀豪车--------------------------------
 .zxhc{
     height: 430px;
-    background: salmon;
+    a{
+        display: block;
+        @include wrap;
+    }
 }
 //-----------------------------------------------发现好货--------------------------------
 .fxhh{
     height: 2118px;
     background: aqua;
+    @include wrap-h3;
+    ul{
+        @include wrap;
+        li{
+               float: left;
+                width: 287px;
+                margin: 0 13px 20px 0;
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }
 //-----------------------------------------------更多好货--------------------------------
 .gdhh{
