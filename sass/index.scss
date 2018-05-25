@@ -477,6 +477,72 @@ nav{
 }
 //-----------------------------------------------页脚--------------------------------
 footer{
-    height: 430px;
-    background: lawngreen;
+    height: 200px;
+    .footerwrap{
+        @include wrap;
+            ul{
+            text-align: center;
+            li{
+                color: #ccc;
+                text-align: center;
+                display: inline;
+                border-right: 1px solid #ccc;
+                a{
+                        margin: 0 8px 0 6px;
+                         color: #000;
+                }
+            }
+            li:last-child{
+                border-right:none;
+            }
+        }
+        .foot-c{
+                width: 630px;
+                height: 50px;
+                padding: 10px 0px;
+                margin: 0 auto;
+                box-sizing: content-box;
+            a{
+                    width: 145px;
+                     height: 44px;
+                    margin-left: 47px;
+                    display: inline-block;
+                    float: left;
+                    background:url(../imgeas/foot_icons.jpg) no-repeat;
+            }
+            a:nth-child(2){
+                background-position: -192px 0;
+            }
+            a:nth-child(3){
+                background-position: -385px 0;
+            }
+        }
+        p{
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #999;
+            clear: both;
+            min-width: 1000px;
+            font-size: 10px;
+            a{
+                font-weight: 900;
+                color: #999;
+                &:hover{
+                    color:#feb300;
+                }
+            }
+        }
+        .footer-end{
+            overflow: hidden;
+            padding: 10px 0px;
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;   
+            a{
+                margin: 0px 0px 0px 12px;
+            }
+        }
+    
+    }
 }
