@@ -1,4 +1,4 @@
-header,.banner,.xryl,.zx,.jhtj,.rjzt,.gdzt,.zxhc,.fxhh,.gdhh,footer,nav{
+header,.banner,.xryl,.zx,.jhtj,.rjzt,.gdzt,.zxhc,.fxhh,.gdhh,footer,nav,.foo-list{
     min-width: 1200px;
 }
 body,html,ul,li,h3,h5,form,input{
@@ -230,16 +230,43 @@ nav{
 //-----------------------------------------------轮播图--------------------------------
 .banner{
     height: 632px;
-    background: deepskyblue;
-    overflow: hidden;
     padding-top: 24px;
-    ul{
+    overflow: hidden;
+    position: relative;
+    .lbt-wrap{
         @include wrap;
-        height: 100%;
-        li{
-            float: left;
+        overflow: hidden;
+            position: relative;
+         ul:nth-child(1){
+            height: 100%;
+            position: absolute;
+            li{
+                float: left;
+                img{
+                    border: none;
+                }
+            }
+        }
+        ul:nth-child(2){
+            position: absolute;
+            bottom: 10px;
+            left: 560px;
+            li{
+                float: left;
+                width: 10px;
+                height: 10px;
+                background: #CECECE;
+                margin: 0 5px;
+                opacity: .8;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .hover{
+                background: #333;
+            }
         }
     }
+   
     
 }
 //-----------------------------------------------新人有礼那一条--------------------------------
@@ -257,6 +284,10 @@ nav{
                 height: 86px;
                 background-image: url(../imgeas/shortcut3a.jpg);
                 background-repeat: no-repeat;
+                &:hover{
+                    transform: translateX(-15px);
+                    transition:all .3s;
+                }
             }
         }
         li:nth-child(2) a{         
@@ -275,10 +306,21 @@ nav{
     height: 380px;
    @include wrap-h3;
    ul{
+        overflow: hidden;      
        @include wrap;
        li{
+           width: 600px;
+           height: 300px;
            float: left;
            position: relative;
+           overflow: hidden; 
+           
+             &:hover{
+                 img{
+                      transform: scale(1.04);
+                   transition:all .3s;        
+                 }
+           }
            p{
                width: 100%;
                text-align: center;
@@ -303,6 +345,9 @@ nav{
             width: 394px;
             display: inline;
              margin: 0 4px 4px 0;
+             &:hover{
+                 opacity: .5;
+             }
             a{
                 width: 100%;
                 height: 100%;
@@ -322,11 +367,20 @@ nav{
     @include wrap-h3;
     ul{
         @include wrap;
+        overflow: hidden;
         li{
             position: relative;
             float: left;
                 width: 600px;
                 margin: 0 0 40px;
+                height: 300px;
+                overflow: hidden;
+                &:hover{
+                    img{
+                     transform: scale(1.04);
+                    transition:all .3s;       
+                    }
+                }
             p{
                 width:100%;
                 text-align: center;
