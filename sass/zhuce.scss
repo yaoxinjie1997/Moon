@@ -1,0 +1,161 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{ font-family:"微软雅黑";}
+input,a{outline:none;border:none;}
+@mixin wrap{
+        width: 1200px;
+        height: 100%;
+        margin:0 auto;
+}
+#head{
+    height: 60px;
+    .h-w{
+        @include wrap;
+        line-height: 60px;
+        overflow: hidden;
+        a{
+            display: block;
+            width: 194px;
+            height: 30px;
+            margin: 15px 0;
+        }
+    }
+}
+#cen-dl{
+    height: 700px;
+    background: url(../imgeas/login_bg.jpg) center no-repeat #f7f2ec;
+    border-top: 1px solid #E5E5E5;
+    .cen-c{
+        @include wrap;
+        height: 100%;
+        padding: 70px 0;
+        form{
+            position: relative;
+            width: 422px;
+            height: 560px;
+            border: 1px solid #d8d8d8;
+            float: right;
+            margin-right: 30px;
+            box-shadow: 0 0 20px #c8c8c8;
+            background: #fff;
+            .dlul1{
+                float: left;
+                li{
+                    float: left;
+                    background: #F7F7F7;
+                    a{
+                        display: block;
+                        width: 210px;
+                        height: 52px;
+                        text-align: center;
+                        line-height: 50px;
+                        font-size: 16px;
+                        text-decoration: none;
+                        color: #afafaf;
+                        &:hover{
+                            border-bottom: 2px solid #000;
+                            color: #000;
+                            font-weight: 900;
+                        }
+                    }
+                }
+                li:nth-child(1) a{
+                        border-bottom: 2px solid #000;
+                        font-weight: 900;
+                        color: #000;
+                    }
+            }    
+            //
+            .dlul2{
+                width: 302px;
+                height:190px;
+                float: left;
+                margin: 30px 59px 0;
+                li{
+                     margin-top: 20px;
+                     input{
+                         width: 300px;
+                         height: 30px;
+                         border: 1px solid #CECECE;
+                     }
+                     span{
+                         text-align: center;
+                         color: red;
+                         display: inline-block;
+                         width: 100%;
+                         font-size: 12px;
+                         visibility: hidden;
+                     }
+                }
+                li:nth-child(1){
+                    margin: 0;
+                }
+                li:nth-child(4){
+                     float: left;
+                    input{
+                        margin-top: 50px;
+                        border: none;
+                        width: 300px;
+                        height: 40px;
+                        line-height: 40px;
+                        background: url(../imgeas/login_sprite.png) 0 -40px no-repeat;
+                        &:hover{
+                            background: url(../imgeas/login_sprite.png) 0 -90px no-repeat;
+                        }
+                    }
+                }
+            }
+            //                  
+       }
+    }
+}
+footer{
+    height: 100px;
+    .footerwrap{
+        @include wrap;
+            ul{
+                margin-top: 15px;
+            text-align: center;
+            li{
+                color: #ccc;
+                text-align: center;
+                display: inline;
+                border-right: 1px solid #ccc;
+                a{
+                    font-size: 12px;
+                        margin: 0 8px 0 6px;
+                         color: #000;
+                }
+            }
+            li:last-child{
+                border-right:none;
+            }
+        }       
+        p{
+            padding-top: 10px;
+            box-sizing: content-box;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #999;
+            clear: both;
+            min-width: 1000px;
+            font-size: 10px;
+            a{
+                font-weight: 900;
+                color: #999;
+                &:hover{
+                    color:#feb300;
+                }
+                img{
+                    display: inline-block;
+                }
+            }
+        }
+    
+    }
+}
