@@ -88,13 +88,12 @@ input,a{outline:none;border:none;}
                          display: inline-block;
                          width: 100%;
                          font-size: 12px;
-                         visibility: hidden;
                      }
                 }
                 li:nth-child(1){
                     margin: 0;
                 }
-                li:nth-child(4){
+                li:nth-child(3){
                      float: left;
                     input{
                         margin-top: 50px;
@@ -108,8 +107,7 @@ input,a{outline:none;border:none;}
                         }
                     }
                 }
-            }
-            //                  
+            }               
        }
     }
 }
