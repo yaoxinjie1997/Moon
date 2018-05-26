@@ -38,10 +38,10 @@ gulp.task("jsmin",function(){
 	.pipe(gulp.dest("dist/js"));
 })
 gulp.task('watch',function(){
-	gulp.watch('js/*.js',['jsmin']); 
+	//gulp.watch('js/*.js',['jsmin']); 
 	 gulp.watch('html/*.html',['copy-index']); 
 	 gulp.watch('images/*.{jpg,png}',['images']); 
 	 gulp.watch('css/*.css',['copy-css']); 
-	
+	gulp.watch('js/*.js',['copy-js']);
 	gulp.watch('sass/*.scss',['sass']);
    }) 

@@ -7,16 +7,17 @@ $(function(){
 			alert("用户名勿为空")
 		}else{
 			$.post("http://h6.duchengjiu.top/shop/api_user.php",{
-				status:"register",
-				username:$("#username").val(),//$("#username").val()
+				status:"login",
+				username:$("#username").val(),
 				password:$("#password").val()
 			},function(data){
-				//console.log(data)
+				console.log(data)
 				if(data.code!=0){
 					alert(data.message)
 				}else{
-					alert("注册成功");
-					location.assign("../html/denglu.html")
+					alert("登录成功");
+					
+					//location.assign("../html/index.html")
 				}
 			})
 		}
