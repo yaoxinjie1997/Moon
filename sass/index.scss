@@ -163,6 +163,16 @@ header{
                 ul{
                     position: absolute;
                     top: 28px;
+                    width: 240px;
+                    background: #fff;
+                    li{
+                        width: 100%;
+                        line-height: 20px;
+                        cursor: pointer;
+                        &:hover{
+                            background: #CECECE;
+                        }
+                    }
                 }
             }
         }

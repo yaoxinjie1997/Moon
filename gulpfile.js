@@ -32,11 +32,16 @@ gulp.task('copy-index',function(){
  gulp.task('images',function(){ 
 	return gulp.src('imgeas/*.{jpg,png}').pipe(gulp.dest('dist/imgeas'))
  }) 
-
+gulp.task("jsmin",function(){
+	gulp.src("js/*.js")
+	.pipe(uglify())
+	.pipe(gulp.dest("dist/js"));
+})
 gulp.task('watch',function(){
+	gulp.watch('js/*.js',['jsmin']); 
 	 gulp.watch('html/*.html',['copy-index']); 
 	 gulp.watch('images/*.{jpg,png}',['images']); 
 	 gulp.watch('css/*.css',['copy-css']); 
-	 gulp.watch('js/*.js',['copy-js']); 
+	
 	gulp.watch('sass/*.scss',['sass']);
    }) 
