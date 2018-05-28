@@ -2,7 +2,7 @@
 $(function(){
 	//获取数据
 	$.get("http://h6.duchengjiu.top/shop/api_goods.php",{//101 112 125
-		"cat_id":45
+		"cat_id":125
 	},function(data){
 		//console.log(data);
 		//console.log(data.data);
