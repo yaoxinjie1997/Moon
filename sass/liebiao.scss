@@ -88,6 +88,7 @@ body{
         }
     }
     a:nth-child(5){
+        cursor:pointer;
         background-position: 0px -172px;
         &:hover{
             background-position: -69px -172px;
@@ -231,7 +232,7 @@ body{
                     width: 234px;
                     background: #F2F2F2;
                     opacity: .9;
-                    bottom: 0px;
+                    bottom: 82px; 
                     display: none;
                     p{
                         height: 14px;
