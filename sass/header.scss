@@ -1,1 +1,229 @@
+header,nav{
+    min-width: 1200px;
+}
+body,html,ul,li,h3,h5,form,input{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
 
+.down{
+    opacity: .8;
+}
+@mixin wrap{
+        width: 1200px;
+        height: 100%;
+        margin:0 auto;
+}
+@mixin wrap-h3{
+    h3{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+//-----------------------------------------------头部--------------------------------
+header{
+    min-width: 1200px;
+    height: 92px;
+    background: #333333;
+    .header_wrap{
+        @include wrap;
+        display: flex;
+        flex-direction: column;
+        .header_top{
+            font-size: 10px;
+            padding-top: 14px;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            .h_t_l{
+                li{
+                    margin-right: 18px;
+                    display: inline-block;
+                         >a{
+                            text-decoration: none;
+                            display: inline-block;
+                            line-height: 34px;
+                            color: #b7b7b7;
+                            }
+                }
+                 li:nth-child(2){
+                     position: relative;
+                     >a{
+                          padding-left: 26px ;
+                           background: url(../imgeas/spriter2016.png) no-repeat -215px -40px;
+                           span{
+                               color: red;
+                           }
+                         &:hover{
+                               color: red;
+                               background: url(../imgeas/spriter2016.png) no-repeat -215px -75px;
+                           }
+                     }
+                     #h_gwd{
+                         position: absolute;
+                         top: 34px;
+                         width: 300px;
+                         min-height: 50px;
+                         background: white;
+                         display: none;
+                         text-align: center;
+                         line-height: 50px;
+                         
+                     }
+                     &:hover{
+                         #h_gwd{ 
+                             display: block;
+                         }
+                         background: white;
+                     }
+                   }  
+                           
+                   li:last-child{
+                       position: relative;
+                       box-sizing: border-box;
+                       border: 1px solid #333;
+                      border-bottom: 0;
+                       >a{
+                            padding-right: 15px;
+                            background: url(../imgeas/spriter2016.png) no-repeat right -108px;
+                            &:hover{
+                                color: red;
+                               background: url(../imgeas/spriter2016.png) no-repeat right -143px;
+                           }
+                       }
+                       #h_zx{
+                           display: none;
+                           position: absolute;
+                           background: white;
+                           width: 65px;
+                           top: 34px;
+                           left: -1px;
+                           border: 1px solid #CECECE;
+                            border-top: 0;
+                           a{ 
+                               color: #333;
+                               display: block;
+                               line-height: 34px;
+                           }
+                       }
+                       &:hover{
+                          border: 1px solid #cecece;
+                           background: white;
+                            #h_zx{
+                               a{
+                                  &:hover{
+                                      color: red;
+                                  }
+                               }
+                               display: block;
+                           }
+                       }  
+                        }
+               
+            }
+            .h_t_c{
+                display: block;
+                width: 212px;
+                >a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: url(../imgeas/spriter2016.png) no-repeat 0 0;
+                }
+            }
+            .h_t_r{
+                width: 262px;
+                height: 28px;
+                position: relative;
+                input:nth-child(1){
+                    width: 240px;
+                    height: 100%;
+                    background: #333;
+                    padding: 5px;
+                    color: #CECECE;
+                    border: 1px solid #cecece;
+                    float: left;
+                }
+                input:nth-child(2){
+                    position: absolute;
+                    right:22px;
+                    padding: 0;
+                    width: 22px;
+                    height: 100%;
+                   border: 0;
+                    background: url(../imgeas/spriter2016.png) no-repeat -44px -42px;
+                }
+                ul{
+                    position: absolute;
+                    top: 28px;
+                    width: 240px;
+                    background: #fff;
+                    li{
+                        width: 100%;
+                        line-height: 20px;
+                        cursor: pointer;
+                        &:hover{
+                            background: #CECECE;
+                        }
+                    }
+                }
+            }
+        }
+        .header_bottom{
+            height:42px;
+            #navlist{
+                height: 100%;
+                margin: 0 auto;
+                text-align: center;
+                li{
+                    a{
+                        padding:12px 15px 10px;
+                        color: #cecece;
+                        line-height: 42px;
+                        font-size: 15px;
+                        text-decoration: none;
+                    }
+                    padding:0 16px 0 16px ;
+                    display: inline-block;
+                     &:hover{
+                         a{
+                           border-bottom: 2px solid #727071;  
+                         }
+                    }
+                }
+                li:nth-child(1) a{
+                        border-bottom: 2px solid #727071;
+                }
+               
+            }
+        }
+    }
+    
+    
+}
+//-----------------------------------------------nav--------------------------------
+nav{
+    background: #F7F7F7;
+    ul{
+        @include wrap;
+        text-align: center;
+        li{
+            display: inline-block;
+            height: 41px;
+            overflow: hidden;
+            line-height: 42px;
+            font-size: 14px;
+            color: #000;
+            cursor: default;
+            width: 60px;
+            text-align: center;
+        }
+    }
+}

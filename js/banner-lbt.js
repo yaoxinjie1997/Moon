@@ -30,10 +30,10 @@ $(function(){
 				},3000);
 		})
 	$(".ban-xb").find("li").each(function(){
-			$(this).mouseover(function(){
+			$(this).click(function(){
 				$(".ban_list").animate({
 					left:- $(".ban_list").find("li").width()*$(this).index()
-				},1000)
+				},100)
 				$(".ban-xb").find("li").eq($(this).index()).addClass("hover").siblings().removeClass("hover");
 			})
 		})

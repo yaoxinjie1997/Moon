@@ -1,2 +1,207 @@
+footer,.foo-list{
+    min-width: 1200px;
+}
+body,html,ul,li,h3,h5,form,input{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
 
+.down{
+    opacity: .8;
+}
+@mixin wrap{
+        width: 1200px;
+        height: 100%;
+        margin:0 auto;
+}
+@mixin wrap-h3{
+    h3{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
 //-----------------------------------------------页脚--------------------------------
+//-----------------------------------------------链接--------------------------------
+.foo-list{
+    height:196px;
+    margin: 0 0 15px 0;
+    .foo-w{
+        background: pink;
+        @include wrap;
+        padding-top: 20px;
+        background: #f2f2f2;
+        border-top:4px solid #9a9a9a;
+        .foo-l-l1{
+                height: 125px;
+                margin: 10px 100px 0 0;
+                display: inline;
+                width: 183px;
+                float: left;
+                background: url(../imgeas/footer_sprite.gif) no-repeat left -86px;
+        }
+        .foo-l-l2{
+               padding: 8px 60px 0 0;
+                width: 200px;
+                float: left;
+                li{
+                    a{
+                        color: #333;
+                        font-size: 14px;
+                        line-height: 26px;
+                        &:hover{
+                            color: orange;
+                        }
+                    }
+                }
+                
+        }
+        .foo-l-c{
+            padding-top: 12px;
+            float: left;
+            .foo-l-c-c{
+                height: 40px;
+                a{
+                    text-decoration: none;
+                    display: block;
+                    float: left;
+                    width: 27px;
+                    height: 22px;
+                    margin: 0 36px 0 7px;
+                    background-image: url(../imgeas/footer_sprite.gif);
+                    background-repeat: no-repeat;
+                }
+                a:nth-child(1){
+                    background-position: left -226px;
+                    &:hover{
+                         background-position: left -263px;
+                    }
+                }
+                a:nth-child(2){
+                    background-position: -70px -226px;
+                    &:hover{
+                         background-position: -70px -263px;
+                    }
+                }
+                a:nth-child(3){
+                    background-position: -144px -226px;
+                    &:hover{
+                         background-position: -144px -263px;
+                    }
+                }
+                a:nth-child(4){
+                    background-position: -214px -226px;
+                    &:hover{
+                         background-position: -214px -263px;
+                    }
+                }
+            }
+            .foo-l-c-b{
+                form{
+                        height: 30px;
+                        input:nth-child(1){
+                            float: left;
+                            width: 213px;
+                            padding-left: 10px;
+                            height: 30px;
+                            background: url(../imgeas/footer_sprite.gif) no-repeat left -436px;
+                        }
+                        input:nth-child(2){
+                            width: 30px;
+                            height: 30px;
+                            background: url(../imgeas/footer_sprite.gif) no-repeat -224px -436px;
+                        }
+                }
+            }
+        }
+        .foo-l-r{
+            float: right;
+            width: 95px;
+            p{
+                text-align: center;
+                font-size: 16px;
+            }
+            img{
+                width: 85px;
+                height: 85px;
+            }
+        }
+    }
+}
+//-----------------------------------------------页脚--------------------------------
+footer{
+    height: 200px;
+    .footerwrap{
+        @include wrap;
+            ul{
+            text-align: center;
+            li{
+                color: #ccc;
+                text-align: center;
+                display: inline;
+                border-right: 1px solid #ccc;
+                a{
+                        margin: 0 8px 0 6px;
+                         color: #000;
+                }
+            }
+            li:last-child{
+                border-right:none;
+            }
+        }
+        .foot-c{
+                width: 630px;
+                height: 50px;
+                padding: 10px 0px;
+                margin: 0 auto;
+                box-sizing: content-box;
+            a{
+                    width: 145px;
+                     height: 44px;
+                    margin-left: 47px;
+                    display: inline-block;
+                    float: left;
+                    background:url(../imgeas/foot_icons.jpg) no-repeat;
+            }
+            a:nth-child(2){
+                background-position: -192px 0;
+            }
+            a:nth-child(3){
+                background-position: -385px 0;
+            }
+        }
+        p{
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #999;
+            clear: both;
+            min-width: 1000px;
+            font-size: 10px;
+            a{
+                font-weight: 900;
+                color: #999;
+                &:hover{
+                    color:#feb300;
+                }
+            }
+        }
+        .footer-end{
+            overflow: hidden;
+            padding: 10px 0px;
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;   
+            a{
+                margin: 0px 0px 0px 12px;
+            }
+        }
+    
+    }
+}
