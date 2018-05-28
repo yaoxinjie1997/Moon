@@ -1,0 +1,414 @@
+.lb-ban,.wdwz,.lb-sx,.lb-wp,.lb-ssk,.cnxh-t,.cnxh-b{
+    width: 1000px;
+}
+body,html,ul,li,h3,h5,form,input,h6,p{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+.down{
+    opacity: .8;
+}
+@mixin wrap{
+        width: 1200px;
+        height: 100%;
+        margin:0 auto;
+}
+@mixin wrap-h3{
+    h3{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+//-----------------------------------------------列表右侧导航--------------------------------
+body{
+    position: relative;
+}
+.lb-r-dh{
+    position: fixed;
+    right: 30px;
+    bottom: 200px;
+    >span{
+        display: block;
+        background: #fff;
+        border: 1px solid #ddd;
+        width: 69px;
+        height: 30px;
+        cursor: pointer;
+        color: red;
+        text-align: center;
+        line-height: 30px;
+    }
+    a{
+        display: block;
+        width: 69px;
+        height: 56px;
+        background: url(../imgeas/r_menu_bg.jpg) no-repeat;
+        border-bottom: 1px solid #D7D7D7;
+    }
+    a:nth-child(2){
+        background-position: 0px 0px;
+        &:hover{
+            background-position: -69px 0px;
+        }
+    }
+    a:nth-child(3){
+        position: relative;
+        background-position: 0px -57px;
+        span{
+            display: block;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            background: red;
+            color: #fff;
+            position: absolute;
+            left: 40px;
+            top: 5px;
+        }
+        &:hover{
+            background-position: -69px -57px;
+        }
+    }
+    a:nth-child(4){
+        background-position: 0px -115px;
+        &:hover{
+            background-position: -69px -115px;
+        }
+    }
+    a:nth-child(5){
+        background-position: 0px -172px;
+        &:hover{
+            background-position: -69px -172px;
+        }
+    }
+}
+//-----------------------------------------------列表banner--------------------------------
+.lb-ban{
+    margin: 10px auto 0;
+    a{
+        img{
+            border: none;
+            width: 1000px;
+            height: 60px;
+        }
+    }
+}
+//-----------------------------------------------列表我的位置--------------------------------
+.wdwz{
+    height: 29px;
+    line-height: 25px;
+    margin: 10px auto 0 auto;
+    ul{
+        li{
+            float: left;
+            font-size: 12px;
+        }
+        li:nth-child(1){
+            color: #000;
+            padding-left: 10px;
+            background: url(../imgeas/xsearchico20120615.png) no-repeat 0 7px;
+        }
+    }
+     p{
+            float: right;
+            span{
+                color: red;
+            }
+        }
+    
+}
+//-----------------------------------------------列表筛选--------------------------------
+.lb-sx{
+    margin: 10px auto 0 auto;
+    border: 1px solid #cecece;
+    box-sizing: content-box;
+    .sx-n{
+        height: 45px;
+        line-height: 45px;
+        border-top: 1px solid #000;
+        overflow: hidden;
+        .sx-t{
+            width: 10%;
+            float: left;
+            background: #F9F9F9;
+            text-align: center;
+        }
+        .sx-c{
+            float: left;
+            background: #CECECE;
+            width: 90%;
+            text-indent: 10px;
+        }
+    }
+}
+//-----------------------------------------------列表物品--------------------------------
+@mixin jiaqian{
+                    border-top: 1px solid #fff;
+                    width: 100%;
+                    height: 82px;
+                    padding: 10px 0 0 10px;
+                    p{
+                        line-height: 18px;
+                        width: 100%;
+                        height: 30px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        a{
+                            color: #333;
+                            text-decoration: none;
+                            &:hover{
+                                color: orange;
+                            }
+                        }
+                    }
+                    b{
+                        font-size: 20px;
+                        color: #333333;
+                        span{
+                            color: #D80C18;
+                        }
+                    }
+                }
+.lb-wp{
+    width: 1000px;
+    margin: 10px auto;
+    font-size: 12px;
+    color: #404040;
+    box-sizing: content-box;
+    .lb-wp-t{
+        margin: 13px 0;
+        border-width: 2px 1px 1px;
+        border-color: #ff6602 #D7D7D7 #D7D7D7;
+        border-style: solid;
+        height: 37px;
+        background: url(../imgeas/xsearch20120615.png);
+        background-position: 0 -135px;
+        background-repeat: repeat-x;
+    }
+    .lb-wp-c{
+        width: 100%;
+         margin-bottom: 10px;
+         padding-bottom: 20px;
+        ul{
+           overflow: hidden;
+            padding-top: 10px;
+            li{
+                box-sizing: content-box;
+                position: relative;
+                float: left;
+                width: 234px;
+                height: 394px;
+                border: 2px solid #fff;
+                margin-right: 16px;
+                overflow: hidden;
+                img{
+                    border: none;
+                }
+                &:hover{
+                    border: 2px solid #CECECE;
+                    .wp-list{
+                        border-top: 1px solid #C8C8C8;
+                    }
+                }
+                .wp-list{
+                     @include jiaqian;
+                }
+                .wp-size{
+                    position: absolute;
+                    width: 234px;
+                    background: #F2F2F2;
+                    opacity: .9;
+                    bottom: 0px;
+                    display: none;
+                    p{
+                        height: 14px;
+                        line-height: 14px;
+                        padding: 10px 0 0 10px;
+                    }
+                    ul{
+                        padding: 10px 0 0 10px;
+                        overflow: hidden;
+                        height: 100%;
+                        li{
+                            box-sizing: content-box;
+                            width: 34px;
+                            float: left;
+                            overflow: hidden;
+                            padding: 0 10px;
+                            border: 1px solid #a7a7a7;
+                            margin: 0 10px 10px 0;
+                            height: 22px;
+                            text-align: center;
+                            background: #fff;
+                            cursor: pointer;
+                            line-height: 22px;
+                            span{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            li:nth-child(4){
+                margin-right: 0;
+            }
+        }
+    }
+    .lb-fenye{
+        overflow: hidden;
+        div{
+            float: right;
+            ul{
+            float: left;
+            overflow: hidden;
+            li{
+                display: inline-block;
+                float: left;
+                border: 1px solid #B8B8B8;
+                height: 22px;
+                line-height: 22px;
+                padding: 0 8px;
+                font-size: 12px;
+                margin: 0 3px;
+                cursor: pointer;
+                &:hover{
+                    border: 1px solid orange;
+                    color: orange;
+                }
+            }
+        }
+        p{
+                display: inline-block;
+                float: left;
+                line-height: 22px;
+                height: 24px;
+                margin-left: 10px;
+            } 
+        }
+       
+    }
+}
+//-----------------------------------------------列表-搜索框--------------------------------
+.lb-ssk{
+    height: 90px;
+    background-color: #F6F6F6;
+    margin: 20px auto 0;
+    overflow: hidden;
+    form{
+        margin: 30px auto 0;
+        text-align: center;
+        div{
+            margin: 30px auto 0;
+            height: 39px;
+            overflow: hidden;
+            width: 560px;
+            input:nth-child(1){
+                border: 2px solid orange;
+                width: 472px;
+                height: 37px;
+                line-height: 37px;
+                padding-left: 5px;
+                float: left;
+            }
+            input:nth-child(2){
+                border: none;
+                height: 37px;
+                width: 82px;
+                float: left;
+                background: orange;
+            }
+        }
+    }
+}
+//-----------------------------------------------列表-猜你喜欢--------------------------------
+.lb-cnxh{
+    margin-top: 15px;
+    .cnxh-t{
+        margin: 0 auto;
+        p{
+            height: 30px;
+        }
+    }
+    .cnxh-b{
+        position: relative;
+        height: 378px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #cecece;
+        margin: 5px auto 10px;
+        .cnxh-lbt{
+            position: absolute;
+            height: 370px;
+            width: 948px;
+            left: 25px;
+            top: 0;
+            ul{
+                padding: 10px 0;
+                height: 350px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 9999px;
+                li{
+                    float: left;
+                    width: 185px;
+                    height: 322px;
+                    padding: 3px 0 7px 0;
+                    overflow: hidden;
+                    border: 2px solid #fff;
+                    a{
+                      img{
+                            width: 180px;
+                            height: 240px;
+                        }  
+                    }
+                   
+                }
+                .cnxh-list{
+                      @include jiaqian; 
+                      b{
+                          font-size: 16px;
+                      }
+                    }
+       
+            }
+        }
+        @mixin cnxh-zy{
+            display: block;
+            width: 25px;
+            height: 67px;
+            position: absolute;
+        }
+        .cnxh-z{
+            @include cnxh-zy;
+            background: url(../imgeas/xsearchico20120615.png) no-repeat left -823px;
+            left: 0;
+            top:35%;
+            &:hover{
+                background: url(../imgeas/xsearchico20120615.png) no-repeat left -747px;
+            }
+        }
+        .cnxh-y{
+            @include cnxh-zy; 
+            background: url(../imgeas/xsearchico20120615.png) no-repeat -25px -823px;
+            right: 0;
+            top:35%;
+             &:hover{
+                background: url(../imgeas/xsearchico20120615.png) no-repeat -25px -747px;
+            }
+        }
+    }
+}
