@@ -1,8 +1,9 @@
 //右侧导航回到顶部的js
+$(function(){
 	function lb_hddb(){
+		//var $hddb=$(".lb-r-dh").find("a").eq(3);
 		var $hddb=$(".lb-r-dh").find("a").eq(3);
-		var $hddb=$(".lb-r-dh").find("a").eq(3);
-		//console.log($(".lb-r-dh").find("a"))
+		console.log($(".lb-r-dh").find("a"))
 		$hddb.click(function(){
 			$("body,html").animate({
 				"scrollTop":0
@@ -10,3 +11,5 @@
 		})
 	}
 	lb_hddb();
+})
+	
