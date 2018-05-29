@@ -119,29 +119,71 @@ body{
         justify-content: space-between;
         .wpxq-l{
             width: 402px;
+            position: relative;
+             #fangdajing{
+                    box-sizing: content-box;
+                    width: 402px;
+                    height: 536px;
+                    position: absolute;
+                    z-index: 3;
+                    top: 0;
+                    left:410px;
+                    border: 1px solid #000000;
+                    display: none;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
             .wpxq-l-t{
+                position: relative;
                 width: 402px;
                 background:hotpink;
                 height: 536px;
                 border: 1px solid #CCCCCC;
+                img{
+                    width: 402px;
+                    height: 536px;
+                }
+                #huadongkuai{
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    background: deepskyblue;
+                    opacity: .5;
+                    display: none;
+                }
             }
             .wpxq-l-b{
                 margin-top: 8px;
                 width: 405px;
-                height: 100%;
                 overflow: hidden;
                 ul{
                     li{
+                        box-sizing: content-box;
                         margin: 5px 4px 0 4px;
-                        background: deepskyblue;
-                        width: 73px;
+                        background: #f1f1f1;
+                        width: 72px;
                         height: 98px;
+                        overflow: hidden;
                         float: left;
-                        background: url(../imgeas/goods_info1.gif) no-repeat -200px -333px;
-                        img{
-                            width: 66px;
-                            height: 88px;
+                        border: 1px solid #000;
+                        &:hover{
+                            background: url(../imgeas/goods_info1.gif) no-repeat left -187px;
+                            border: none;
+                            width: 74px;
+                            height: 100px;
                         }
+                        a{
+                            width: 68px;
+                            height: 88px;
+                            display: inline-block;
+                            margin: 7px 0 0 3px;
+                            img{
+                                width: 66px;
+                                height: 88px;
+                            }
+                        } 
                     }
                 }
             }
@@ -149,7 +191,6 @@ body{
         .wpxq-r{
             width: 570px;
             height: 628px;
-            background: greenyellow;
             padding-right: 10px;
             .wpxq-r-t{
                 h5{
@@ -215,7 +256,7 @@ body{
             .wpxq-r-b{
                 padding: 10px 0;
                 width: 546px;
-                
+                overflow: hidden;
                 .w-r-b1{
                     height: 30px; 
                     margin: 7px 0 8px 0;
@@ -276,6 +317,100 @@ body{
                         line-height: 23px;
                         padding-left: 22px;
                         background: url(../imgeas/fwb.jpg) no-repeat left center;
+                    }
+                }
+                .w-r-b5{
+                    box-sizing: content-box;
+                    height: 38px;
+                    padding: 20px 0 15px;
+                    float: left;
+                    width: 100%;
+                    a{
+                        height: 36px;
+                        width: 153px;
+                        float: left;
+                        background: url(../imgeas/goods_info1.gif) no-repeat;
+                        margin-right: 15px;
+                    }
+                    #ljgm{
+                        background-position: 0 -844px;
+                        &:hover{
+                            background-position: 0 -880px;
+                        }
+                    }
+                    #jrgwc{
+                        background-position: 0 -916px;
+                        &:hover{
+                            background-position: 0 -952px;
+                        }
+                    }
+                    #jrsc{
+                        width: 61px;
+                        height: 36px;
+                        background-position: -211px -1435px;
+                        &:hover{
+                            background-position: -211px -1471px;
+                        }
+                    }
+                }
+                .w-r-b6{
+                    float: left;
+                    width: 100%;
+                    color: orange;
+                    span:nth-child(1){
+                        font-size: 16px;
+                        font-weight: 900x;
+                        margin-right: 10px;
+                    }
+                    span:nth-child(2){
+                        font-size: 12px;
+                        color: #7e7e7e;
+                    }
+                }
+                .w-r-end{
+                    float: left;
+                    margin-top: 30px;
+                    border-top: 1px solid #E5E5E5;
+                    padding-top: 20px;
+                    overflow: hidden;
+                    width: 100%;
+                    .w-r-e-left{
+                        float: left;
+                        width: 220px;
+                        height: 90px; 
+                        border-right: 1px solid #CECECE;
+                        img{
+                            width: 90px;
+                            height: 90px;
+                            margin-right: 15px;
+                        }
+                        p{
+                            display: inline-block;
+                            width: 90px;
+                        }
+                    }
+                    .w-r-e-right{
+                        float: left;
+                        width: 320px;
+                        padding-left: 50px;
+                        height: 68px;
+                        div{
+                            width: 250px;
+                            height: 38px;
+                            padding: 7px 0;
+                            margin-top: 30px;
+                            background: url(../imgeas/invite_goods_info.gif) no-repeat 40px -24px;
+                            span{
+                                float: left;
+                            }
+                            a{
+                                height: 20px;
+                                float: left;
+                                display: inline-block;
+                                width: 24px;
+                                margin-right: 7px;
+                            }
+                        }
                     }
                 }
             }
