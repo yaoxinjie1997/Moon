@@ -1,7 +1,9 @@
 $(function(){
 	//获取数据
+	var sear_id=location.search.substr(1,location.search.length-1);
+	//console.log(sear_id) ;
 	$.get("http://h6.duchengjiu.top/shop/api_goods.php",{
-		"goods_id":249851
+		"goods_id":sear_id
 	},function(data){
 		//console.log(data.data[0])
 		var $data=data.data[0];
@@ -11,6 +13,7 @@ $(function(){
 		$(".wpxq-t .wpxq-l-t").find("img").eq(0).attr("src",$data.goods_thumb);//物品图片
 		$("#fangdajing").find("img").attr("src",$data.goods_thumb);//物品放大图片
 		$(".wpxq-t .wpxq-l-b ul li img").attr("src",$data.goods_thumb);//物品缩略图
+		$("#wpxq .wpxq-r .wpxq-r-b .w-r-b5 #jrgwc").attr("goods_id",$data.goods_id)//放入购物车按钮
 	})
 	//放大镜
 	var $wpxq_k=$("#wpxq .wpxq-t .wpxq-l .wpxq-l-t");

@@ -12,7 +12,7 @@ $(function(){
 		$(data.data).each(function(){
 			//console.log($(this)[0])
 			str+=`<li>
-						<a href="#" cat_id="${$(this)[0].goods_id}"><img src="${$(this)[0].goods_thumb}"/></a>
+						<a href="../html/xiangqing.html?${$(this)[0].goods_id}" cat_id="${$(this)[0].goods_id}"><img src="${$(this)[0].goods_thumb}"/></a>
 						<div class="wp-list">
 							<h6>${$(this)[0].goods_name}</h6>
 							<p><a href="#">${$(this)[0].goods_desc}</a></p>
