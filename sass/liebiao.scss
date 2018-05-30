@@ -367,6 +367,7 @@ body{
             width: 948px;
             left: 25px;
             top: 0;
+            overflow:hidden;
             ul{
                 padding: 10px 0;
                 height: 350px;
@@ -382,6 +383,7 @@ body{
                     padding: 3px 0 7px 0;
                     overflow: hidden;
                     border: 2px solid #fff;
+                    margin: 2px;
                     a{
                       img{
                             width: 180px;
@@ -404,6 +406,7 @@ body{
             width: 25px;
             height: 67px;
             position: absolute;
+            cursor: pointer;
         }
         .cnxh-z{
             @include cnxh-zy;

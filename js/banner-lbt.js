@@ -2,6 +2,7 @@ $(function(){
 	$(".ban_list").css("width",$(".ban_list").find("li").length*$(".ban_list").find("li").width())
 	var i=0;
 	$(".ban-xb").find("li").eq(0).addClass("hover")
+	clearInterval(timer);
 	var timer=setInterval(function(){
 		foo();
 	},3000)
@@ -25,6 +26,7 @@ $(function(){
 			clearInterval(timer);
 		})
 	$(".banner").mouseout(function(){
+		clearInterval(timer);
 				timer=setInterval(function(){
 					foo();
 				},3000);
