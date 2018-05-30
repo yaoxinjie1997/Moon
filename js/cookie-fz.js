@@ -74,4 +74,13 @@ function getCookie(name) {
 
 function removeCookie(name) {
 	setCookie(name, 1, -1);
+	
+}
+function sccookie(data){
+//	console.log(data)
+//	var $wpid=$(data).attr("wpid")
+//	console.log($wpid)
+//	var obj = JSON.parse(getCookie("gwc"));
+//	console.log(obj[$wpid])
+	//setCookie("gwc",JSON.stringify(obj),7);
 }

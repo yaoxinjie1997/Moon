@@ -2,8 +2,8 @@ $(function(){
 	//点击加入购物车按钮 使物品存入Cookie
 	var $jrgwc=$("#wpxq .wpxq-r .wpxq-r-b .w-r-b5 #jrgwc")
 	//console.log($jrgwc)
-	if(getCookie("cart") !== undefined) {
-				var obj = JSON.parse(getCookie("cart"));
+	if(getCookie("gwc") !== undefined) {
+				var obj = JSON.parse(getCookie("gwc"));
 			} else {
 				var obj = {};
 			}
@@ -28,7 +28,7 @@ $(function(){
 			}
 			$gwd.html(sum)
 			var objToStr = JSON.stringify(obj);
-			setCookie("cart",objToStr,7)
+			setCookie("gwc",objToStr,7)
 		//飞入购物袋效果
 	/*	var $img=$("#wpxq .wpxq-t .wpxq-l-t a img").clone();
 		$img.prependTo($("#wpxq .wpxq-t .wpxq-l-t a"))
