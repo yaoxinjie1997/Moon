@@ -1,6 +1,6 @@
 $(function(){
 	
-	//获取用户列表
+	//获取用户列表   （不用写了）
 	var sear_id=location.search.substr(1,location.search.length-1);
 	//console.log(sear_id)
 	$.get("http://h6.duchengjiu.top/shop/api_userinfo.php",{
@@ -10,7 +10,12 @@ $(function(){
 		//console.log(data)
 	})
 	//获取购物车Cookie
-	if(getCookie("gwc")!==undefined){
+	hqgwcCookie();
+	function hqgwcCookie(){
+		if(getCookie("gwc")!==undefined){
+		if(getCookie("gwc")=="{}"){
+			$(".h_t_l #h_gwd").html("<li>购物袋暂时么得商品</li>")
+		}
 		var obj = JSON.parse(getCookie("gwc"));
 		//console.log(obj)
 		var sum = 0;
@@ -21,12 +26,11 @@ $(function(){
 		$(".lb-r-dh a span").html(sum)
 		for(var $id in obj){
 			var str="";
-			console.log($id)
-			console.log(obj[$id])
-			$.get("http://h6.duchengjiu.top/shop/api_goods.php",{
+			(function($id){
+				$.get("http://h6.duchengjiu.top/shop/api_goods.php",{
 				"goods_id":$id
 			},function(data){
-				console.log($id)
+				//console.log($id)
 				var $data=data.data[0];
 				str+=`<li>
 						<div class="h_gwd-l">
@@ -45,9 +49,11 @@ $(function(){
 				$(".h_t_l #h_gwd").html(str);
 				
 			})
+			})($id)
 		}
-	
 	}else{
-		$(".h_t_l #h_gwd").html("购物袋暂时么得商品")
+		$(".h_t_l #h_gwd").html("<li>购物袋暂时么得商品</li>")
 	}
+	}
+	
 })

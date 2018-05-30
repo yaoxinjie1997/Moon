@@ -77,10 +77,30 @@ function removeCookie(name) {
 	
 }
 function sccookie(data){
-//	console.log(data)
-//	var $wpid=$(data).attr("wpid")
-//	console.log($wpid)
-//	var obj = JSON.parse(getCookie("gwc"));
-//	console.log(obj[$wpid])
-	//setCookie("gwc",JSON.stringify(obj),7);
+	//console.log(data)
+	//console.log($(data).parent().parent().parent().find("a").find("span").html())
+	var $wpid=$(data).attr("wpid")
+	//console.log($wpid)
+	var obj = JSON.parse(getCookie("gwc"));
+	//console.log(obj[$wpid])
+	obj[$wpid]--;
+	var $spht=$(data).parent().parent().parent().find("a").find("span").html();//top的span
+	$spht--;
+	var $ycdhs=$(".lb-r-dh a span").html();//有右侧导航栏的页面 里边购物袋里边的span
+	$ycdhs--;
+	//console.log($ycdhs)
+	if(obj[$wpid]<=0){
+		obj[$wpid]=0
+	}
+	if(obj[$wpid]==0){
+		$(data).parent().parent().parent().find("a").find("span").html("0")
+		delete obj[$wpid]
+		$(data).parent().remove()
+		$(".lb-r-dh a span").html("0");
+	}else{
+		$(data.parentNode).find(".h_gwd-r").find("p").eq(2).find("em").html(obj[$wpid]);
+		$(data).parent().parent().parent().find("a").find("span").html($spht);
+		$(".lb-r-dh a span").html($ycdhs);
+	}
+	setCookie("gwc",JSON.stringify(obj),7);
 }

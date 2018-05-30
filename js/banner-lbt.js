@@ -33,7 +33,7 @@ $(function(){
 			$(this).click(function(){
 				$(".ban_list").animate({
 					left:- $(".ban_list").find("li").width()*$(this).index()
-				},100)
+				},1000)
 				$(".ban-xb").find("li").eq($(this).index()).addClass("hover").siblings().removeClass("hover");
 			})
 		})

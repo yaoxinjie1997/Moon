@@ -1,8 +1,9 @@
 
 $(function(){
+	var sear_id=location.search.substr(1,location.search.length-1);
 	//获取数据
 	$.get("http://h6.duchengjiu.top/shop/api_goods.php",{//101 112 125
-		"cat_id":125
+		"cat_id":sear_id
 	},function(data){
 		//console.log(data);
 		//console.log(data.data);
