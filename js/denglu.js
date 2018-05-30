@@ -15,9 +15,9 @@ $(function(){
 				if(data.code!=0){
 					alert(data.message)
 				}else{
+					console.log($('#username').val());
 					alert("登录成功");
-					
-					//location.assign("../html/index.html")
+					location.assign("../html/index.html?"+$('#username').val())
 				}
 			})
 		}

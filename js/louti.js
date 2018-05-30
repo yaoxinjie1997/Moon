@@ -1,5 +1,5 @@
 $(function(){
-	console.log($("#right-dh").find("map"))
+	//console.log($("#right-dh").find("map"))
 	$map=$("#right-dh").find("map").find("area");
 	$map.eq(0).click(function(){
 		$("body,html").animate({
