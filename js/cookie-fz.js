@@ -88,19 +88,63 @@ function sccookie(data){
 	$spht--;
 	var $ycdhs=$(".lb-r-dh a span").html();//有右侧导航栏的页面 里边购物袋里边的span
 	$ycdhs--;
+	var sum = 0;
+		for(var b in obj) {
+			sum += obj[b];
+		}
 	//console.log($ycdhs)
 	if(obj[$wpid]<=0){
 		obj[$wpid]=0
 	}
 	if(obj[$wpid]==0){
-		$(data).parent().parent().parent().find("a").find("span").html("0")
+		$(data).parent().parent().parent().find("a").find("span").html(sum)
 		delete obj[$wpid]
 		$(data).parent().remove()
-		$(".lb-r-dh a span").html("0");
+		$(".lb-r-dh a span").html(sum);
+		setCookie("gwc",JSON.stringify(obj),7);
 	}else{
 		$(data.parentNode).find(".h_gwd-r").find("p").eq(2).find("em").html(obj[$wpid]);
 		$(data).parent().parent().parent().find("a").find("span").html($spht);
 		$(".lb-r-dh a span").html($ycdhs);
+		setCookie("gwc",JSON.stringify(obj),7);
 	}
-	setCookie("gwc",JSON.stringify(obj),7);
+	
 }
+//点击加减按钮进行加减
+	function jiancli(data){//减
+		var $inp=$(data).parent().find("input");
+		$inp.val(parseInt($inp.val()-1))
+		if($inp.val()<=0){
+			$inp.val(0)
+			console.log($(data).parent().parent())
+			$(data).parent().parent().remove();
+		}
+		var obj = JSON.parse(getCookie("gwc"));
+		console.log(obj)
+		var sum = 0;
+			for(var b in obj) {
+				sum += obj[b];
+			}
+		var $id=$(data).attr("goods_id")
+		console.log($id)
+		obj[$id]--;
+		if(obj[$id]<=0){
+			obj[$id]=0
+			delete obj[$id]
+		}
+		sum--;
+		if(sum<=0){
+			sum=0
+		}
+		$(".shop-b5 span").html(sum)
+		setCookie("gwc",JSON.stringify(obj),7);
+	}
+	function jiacli(data){
+		var $inp=$(data).parent().find("input");
+		$inp.val(parseInt($inp.val())+1);
+		var obj = JSON.parse(getCookie("gwc"));
+		var $id=$(data).attr("goods_id")
+		obj[$id]++;
+		setCookie("gwc",JSON.stringify(obj),7);
+	}
+	

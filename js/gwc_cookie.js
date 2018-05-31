@@ -1,6 +1,14 @@
 $(function(){
-	//获取购物车Cookie
-	
+	//点击加减按钮进行加减
+	$(".jia").click(function(){
+		$(".gw-wpsl").val(parseInt($(".gw-wpsl").val())+1);
+	})
+	$(".jian").click(function(){
+		$(".gw-wpsl").val(parseInt($(".gw-wpsl").val())-1);
+		if($(".gw-wpsl").val()<=1){
+			$(".gw-wpsl").val(1)
+		}
+	})
 	//点击加入购物车按钮 使物品存入Cookie
 	var $jrgwc=$("#wpxq .wpxq-r .wpxq-r-b .w-r-b5 #jrgwc")
 	//console.log($jrgwc)
@@ -19,10 +27,12 @@ $(function(){
 		//加入Cookie
 		var $guc_wpid=$jrgwc.attr("goods_id")
 		//console.log($guc_wpid)
+		//console.log($(".gw-wpsl").val())
 		if(obj[$guc_wpid] == undefined) {
-						obj[$guc_wpid] = 1;
+						obj[$guc_wpid] =parseInt($(".gw-wpsl").val());
 					} else {
-						obj[$guc_wpid]++;
+						obj[$guc_wpid]+=parseInt($(".gw-wpsl").val());
+						//console.log(obj[$guc_wpid])
 					}
 			var sum = 0;
 			for(var b in obj) {
@@ -33,31 +43,6 @@ $(function(){
 			setCookie("gwc",objToStr,7)
 			//top的span改变数量
 			hqgwcCookie();
-		//飞入购物袋效果
-	/*	var $img=$("#wpxq .wpxq-t .wpxq-l-t a img").clone();
-		$img.prependTo($("#wpxq .wpxq-t .wpxq-l-t a"))
-		$img.css({
-			"position":"absolute"
-		})
-		console.log($img);
-		
-		var $speed=10;
-		var $mbw=50;
-		if($img.offset().top!=$mb_top){
-			var $mb_top=$gwd.offset().top;//目标Y轴位置
-			var $mb_left=$gwd.offset().left;//目标X轴位置
-			var $cs_top=$("#wpxq .wpxq-t .wpxq-l-t a img").offset().top;//初始Y轴位置
-			var $cs_left=$("#wpxq .wpxq-t .wpxq-l-t a img").offset().left;//初始Y轴位置
-			var $tt=($mb_top-$cs_top)/10
-			var $ll=($mb_left-$cs_left)/10
-			var $csw=($img.width)/50
-				$img.animate({
-				"top":$tt,
-				"left":$ll,
-				"width":$csw
-			},100)
-		}
-		*/
 	})
 	function hqgwcCookie(){
 		if(getCookie("gwc")!==undefined){
