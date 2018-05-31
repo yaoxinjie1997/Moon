@@ -120,13 +120,14 @@ function sccookie(data){
 			$(data).parent().parent().remove();
 		}
 		var obj = JSON.parse(getCookie("gwc"));
-		console.log(obj)
+		//nsole.log(obj)
 		var sum = 0;
+		var zzjg=0;
 			for(var b in obj) {
 				sum += obj[b];
 			}
 		var $id=$(data).attr("goods_id")
-		console.log($id)
+		//console.log($id)
 		obj[$id]--;
 		if(obj[$id]<=0){
 			obj[$id]=0
@@ -136,7 +137,14 @@ function sccookie(data){
 		if(sum<=0){
 			sum=0
 		}
-		$(".shop-b5 span").html(sum)
+		if($(data).parent().parent().find(".oinc").attr("checked")!==undefined){
+			$(".shop-b5 span").html(sum)
+			zzjg=parseInt($(".shop-b6 span b").html())-parseInt($(data).parent().parent().find("td").eq(2).find("em").html())
+			$(".shop-b6 span b").html(zzjg)
+		}else{
+			$(".shop-b5 span").html()
+			$(".shop-b6 span b").html()
+		}
 		setCookie("gwc",JSON.stringify(obj),7);
 	}
 	function jiacli(data){
@@ -145,6 +153,29 @@ function sccookie(data){
 		var obj = JSON.parse(getCookie("gwc"));
 		var $id=$(data).attr("goods_id")
 		obj[$id]++;
+		var sum = 0;
+		var zzjg=0;
+		
+		if($(data).parent().parent().find(".oinc").attr("checked")!==undefined){
+			for(var b in obj) {
+				sum += obj[b];
+			}
+			$(".shop-b5 span").html(sum)
+			zzjg=parseInt($(".shop-b6 span b").html())+parseInt($(data).parent().parent().find("td").eq(2).find("em").html())
+			$(".shop-b6 span b").html(zzjg)
+		}else{
+			$(".shop-b5 span").html()
+			$(".shop-b6 span b").html()
+		}
 		setCookie("gwc",JSON.stringify(obj),7);
 	}
-	
+//点击删除按钮删除整行
+function odelete(data){
+	var obj = JSON.parse(getCookie("gwc"));
+	var $id=$(data).attr("goods_id")
+	delete obj[$id]
+	$(data).parent().parent().remove();
+	setCookie("gwc",JSON.stringify(obj),7);
+}
+
+
