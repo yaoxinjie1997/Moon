@@ -1,4 +1,23 @@
 $(function(){
+	//删除按钮
+	$(".shop-b2").click(function(){
+		$(".shop-xq .oinc").each(function(){
+			//console.log($(this))
+			if($(this).attr("checked")!==undefined){
+				var obj = JSON.parse(getCookie("gwc"));
+				console.log($(this).parent().parent())
+				var $id=$(this).attr("goods_id")
+				delete obj[$id]
+				console.log($(this).parent().parent().find(".gw-wpsl").val())
+				$(".shop-b5 span").html($(".shop-b5 span").html()-$(this).parent().parent().find(".gw-wpsl").val())
+				$(".shop-b6 span b").html($(".shop-b6 span b").html()-$(this).parent().parent().find("td").eq(2).find("em").html())
+				$(this).parent().parent().remove();
+				setCookie("gwc",JSON.stringify(obj),7);
+				
+			}
+		})
+		
+	})
 	hqgwcCookie();
 	function hqgwcCookie(){
 		if(getCookie("gwc")!==undefined){
